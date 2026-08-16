@@ -6,10 +6,17 @@ from time import sleep
 
 pygame.init()
 
+
+musica_ambiente = pygame.mixer.music.load('jogo_2d/audio/SyncLab Music - Music Relax Free.mp3')
+pygame.mixer.music.play(-1)
+
+coleta_moeda = pygame.mixer.Sound('jogo_2d/audio/smw_stomp.wav')
+coleta_moeda.set_volume(0.5)
+
 largura = 640
 altura = 480
-x_player = largura / 2
-y_player = altura / 2
+x_player = int(largura / 2)
+y_player = int(altura / 2)
 vel = 5
 x_moeda = randint(40,600)
 y_moeda = randint(50,430)
@@ -49,5 +56,8 @@ while True:
           x_moeda = randint(40,600)
           y_moeda = randint(50,430)
           pontos += 1
+          coleta_moeda.play()
+
     tela.blit(txt_fort, (10, 10))
+
     pygame.display.update()

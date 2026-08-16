@@ -8,11 +8,11 @@ temp = (h * 3600) + (m * 60) + s
 
 print(f'CRONOMETRAR: {h}:{m}:{s}')
 
-while temp != -2:
+while temp != -1:
     print(f'{h}:{m}:{s}')
     temp -= 1
     s -= 1
-    sleep(1)
+    sleep(0.1)
     if s <= 0:
         if m > 0:
             m -= 1
